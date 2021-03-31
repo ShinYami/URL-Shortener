@@ -1,5 +1,31 @@
 <?php
 
+if(isset($_GET['q'])) {
+
+    $shortcut = htmlspecialchars($_GET['q']);
+
+    $bdd = new PDO('mysql:host=localhost;dbname=bitly;charset=utf8', 'root', '');
+    $requete = $bdd->prepare('SELECT COUNT(*) AS x FROM links WHERE shortcut = ?');
+    $requete->execute(array($shortcut));
+
+    while($result = $requete->fetch()) {
+
+        if($result['x'] !=1) {
+            header('location: ../?error=true&message=Adresse url inconnue');
+            exit();
+        }
+    }
+
+    //Redirection
+    $requete = $bdd->prepare('SELECT * FROM links WHERE shortcut = ?');
+    $requete->execute(array($shortcut));
+
+    while($result = $requete->fetch()){
+        header('location: '.$result['url']);
+        exit();
+    }
+}
+
 if (isset($_POST['url'])) {
 
     $url = $_POST['url'];
@@ -10,7 +36,7 @@ if (isset($_POST['url'])) {
         exit();
     }
 
-    $shortcut = crypt($url, time());
+    $shortcut = crypt($url, rand());
 
     try
     {
@@ -69,10 +95,18 @@ if (isset($_POST['url'])) {
             <?php if (isset($_GET['error']) && isset($_GET['message'])) {?>
                 <div class="center">
                     <div class="result">
-                            <?php echo htmlspecialchars($_GET['message']); ?>
+                            <b><?php echo htmlspecialchars($_GET['message']); ?></b>
                     </div>
                 </div>
-            <?php }?>
+            <?php } else if(isset($_GET['short'])) {
+                ?>
+                <div class="center">
+                    <div class="result">
+                            <b>URL RACCOURCIE : </b>
+                            http://localhost/?q=<?php echo htmlspecialchars($_GET['short']);?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </section>
 
