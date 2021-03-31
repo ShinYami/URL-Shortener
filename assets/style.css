@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #253d56;
+}
+
+.hello {
+    background-image: url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1652&q=80);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+header {
+    padding: 30px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#logo {
+    height: 50px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 200;
+}
+
+form {
+    text-align: center;
+    margin-top: 35px;
+}
+
+input[type=url] {
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border: none;
+    width: 50%;
+    font-size: 1em;
+}
+
+input[type=submit] {
+    cursor: pointer;
+    padding: 20px 30px;
+    font-size: 1em;
+    border: none;
+    border-radius: 3px;
+    background-color: #253d56;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.center {
+    text-align: center;
+}
+
+.result {
+    color: white;
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 25px;
+    display: inline-block;
+}
+
+.brands {
+    text-align: center;
+    padding: 30px;
+    background-color: #ededed;
+}
+
+h3 {
+    color: #253d56;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 25px;
+}
+
+.picture {
+    margin: 15px;
+    height: 50px;
+}
+
+footer {
+    background-color: #253d56;
+    color: white;
+    text-align: center;
+}
+
+footer, span{
+    margin-top: 10px;
+}
