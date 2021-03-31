@@ -83,7 +83,7 @@ if (isset($_POST['url'])) {
     <section class="hello">
         <div class="container">
             <header>
-                <img id="logo" src="./assets/logo.png" alt="logo bitly">
+                <img class="logo" src="./assets/logo.png" alt="logo bitly">
             </header>
             <h1>Raccourcicez votre URL</h1>
             <h2>Simplifiez vous la vie</h2>
@@ -121,6 +121,7 @@ if (isset($_POST['url'])) {
     </section>
 
     <footer>
+        <img class="logo" src="./assets/logo.png" alt="logo footer"><br>
         <span>Project for php training</span>
     </footer>
 
